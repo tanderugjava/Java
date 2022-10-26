@@ -1,4 +1,6 @@
 package day2;
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
 
 public class Task4 {
@@ -6,12 +8,14 @@ public class Task4 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число x:");
         double x = scanner.nextDouble();
+        double y = 0;
         if(x >= 5){
-            System.out.println((x * x - 10) / (x + 7));
+            y = ((x * x - 10) / (x + 7));
             } else if(x > -3 && x < 5){
-                System.out.println((x+3) * (x * x - 2));
+                y = ((x+3) * (x * x - 2));
             } else{
-                System.out.println(420.0);
+                y = 420.0;
         }
+        System.out.println(y);
     }
 }

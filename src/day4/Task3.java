@@ -11,23 +11,18 @@ public class Task3 {
                 numbers[i][j] = random.nextInt(51);
             }
         }
-        int[] s = new int[12];
-
+        int maxSum = 0;
+        int maxSumIdx = 0;
         for (int i = 0; i < numbers.length; i++) {
-            int d = 0;
+            int sum = 0;
             for (int j = 0; j < numbers[i].length; j++) {
-                d += numbers[i][j];
+                sum += numbers[i][j];
             }
-            s[i] = d;
-        }
-        int a = 0;
-        int b = 0;
-        for(int i = 0; i < s.length; i++){
-            if(s[i] >= a){
-                a = s[i];
-                b = i;
+            if(sum > maxSum){
+                maxSum = sum;
+                maxSumIdx = i;
             }
         }
-        System.out.println(b);
+        System.out.println(maxSumIdx);
     }
 }

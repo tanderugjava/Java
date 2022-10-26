@@ -18,42 +18,42 @@ public class Task1 {
         System.out.println();
         System.out.println("Длина массива: " + massive.length);
 
-        int s = 0;
+        int count8 = 0;
         for (Integer x : massive) {
             if (x > 8) {
-                s++;
+                count8++;
             }
         }
-        System.out.println("Количестве чисел больше 8: " + s);
+        System.out.println("Количестве чисел больше 8: " + count8);
 
-        int q = 0;
+        int count1 = 0;
         for (Integer x : massive) {
             if (x == 1) {
-                q++;
+                count1++;
             }
         }
-        System.out.println("Количестве чисел равных 1: " + q);
+        System.out.println("Количестве чисел равных 1: " + count1);
 
-        int w = 0;
+        int even = 0;
         for (Integer x : massive) {
             if (x % 2 == 0) {
-                w++;
+                even++;
             }
         }
-        System.out.println("Количестве четных чисел: " + w);
+        System.out.println("Количестве четных чисел: " + even);
 
-        int e = 0;
+        int odd = 0;
         for (Integer x : massive) {
             if (x % 2 != 0) {
-                e++;
+                odd++;
             }
         }
-        System.out.println("Количестве нечетных чисел: " + e);
+        System.out.println("Количестве нечетных чисел: " + odd);
 
-        int r = 0;
+        int sum = 0;
         for (Integer x : massive) {
-            r += x;
+            sum += x;
         }
-        System.out.println("Сумме всех элементов массива: " + r);
+        System.out.println("Сумме всех элементов массива: " + sum);
     }
 }

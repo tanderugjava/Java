@@ -29,20 +29,14 @@ public class Task2 {
         System.out.println("наименьший элемент массива: " + min);
 
         int ten = 0;
-        for (Integer x : numbers) {
-            if (x == 0 || x % 10 == 0) {
-                ten++;
-            }
-        }
-        System.out.println("количество элементов массива, оканчивающихся на 0: " + ten);
-
         int tensum = 0;
         for (Integer x : numbers) {
             if (x == 0 || x % 10 == 0) {
+                ten++;
                 tensum += x;
             }
         }
+        System.out.println("количество элементов массива, оканчивающихся на 0: " + ten);
         System.out.println("сумма элементов массива, оканчивающихся на 0: " + tensum);
-
     }
 }
