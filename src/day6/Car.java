@@ -4,7 +4,6 @@ public class Car {
         private String model;
         private String color;
         private int year;
-        private int inputYear;
 
         public void setModel(String carModel) {
             model = carModel;
