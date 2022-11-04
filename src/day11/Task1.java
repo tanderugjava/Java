@@ -17,15 +17,16 @@ public class Task1 {
         System.out.println(picker);
         System.out.println(courier.getCountDeliveredOrders());
         System.out.println(courier);
-        courier1.do_work();
+        courier1.doWork();
         System.out.println(courier1.getCountDeliveredOrders());
-        System.out.println(courier.getCountDeliveredOrders()); // работает, но переменные в классах не приватные, с наскока поменять не получилось
+        System.out.println(courier.getCountDeliveredOrders());
 
 
     }
+    public static final int QUANTITY_FOR_BONUS = 10000;
     public static void businessProcess(Worker worker){
-        for(int i = 0; i < 10000; i++){
-            worker.do_work();
+        for(int i = 0; i < QUANTITY_FOR_BONUS; i++){
+            worker.doWork();
         }
         worker.bonus();
     }

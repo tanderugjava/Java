@@ -1,59 +1,52 @@
 package day11;
 
 public class Shaman extends Hero implements  Healer, PhysAttack, MagicAttack{
-    int physAtt;
-    int magicAtt;
+
+    public static final int HEALHIMSELF = 50;
+    private int magicAtt;
 
     public Shaman(){
-        health = 100;
+        this.setHealth(MAX_HEALTH);
         this.magicAtt = 15;
-        physDef = 0.2;
-        magicDef = 0.2;
-        this.physAtt = 10;
+        this.setPhysDef(0.2);
+        this.setMagicDef(0.2);
+        this.setPhysAtt(10);
     }
 
 
     @Override
     public void healHimself() {
-        if(health < 100){
-            health += 25;
-            if(health > 100){
-                health = 100;
-            }
+        if(getHealth() < MAX_HEALTH) {
+            setHealth(getHealth() + HEALHIMSELF);
+        }
+        else{
+            setHealth(MAX_HEALTH);
         }
     }
 
     @Override
     public void healTeammate(Hero hero) {
-        if(hero.health < 100){
-            hero.health += 50;
-            if(hero.health > 100){
-                hero.health = 100;
-            }
+        if(getHealth() < MAX_HEALTH) {
+            hero.setHealth(getHealth() + HEALHIMSELF);
+        }
+        else{
+            hero.setHealth(MAX_HEALTH);
         }
     }
 
     @Override
     public void magicalAttack(Hero hero) {
-        if(hero.health > 0){
-            hero.health = (int) (hero.health - (magicAtt - (magicAtt * hero.magicDef)));
-            if(hero.health < 0){
-                hero.health = 0;
+        if (hero.getHealth() > MIN_HEALTH) {
+            if (hero.getHealth() < (magicAtt - (magicAtt * hero.getMagicDef()))) {
+                hero.setHealth(MIN_HEALTH);
+            } else {
+                hero.setHealth((int) (hero.getHealth() - (magicAtt - (magicAtt * hero.getMagicDef()))));
             }
         }
     }
 
-    @Override
-    public void physicalAttack(Hero hero) {
-        if(hero.health > 0){
-            hero.health = (int) (hero.health - (physAtt - (physAtt * hero.physDef)));
-            if(hero.health < 0){
-                hero.health = 0;
-            }
-        }
-    }
 
     public String toString(){
-        return "Shaman(health=" + health + ")";
+        return "Shaman(health=" + getHealth() + ")";
     }
 }

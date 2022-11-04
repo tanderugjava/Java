@@ -1,46 +1,38 @@
 package day11;
 
 public class Paladin extends Hero implements  Healer, PhysAttack{
-    int physAtt;
+
+    public static final int HEALHIMSELF = 25;
 
     public Paladin (){
-        health = 100;
-        physDef = 0.5;
-        this.physAtt = 15;
-        magicDef = 0.2;
+        this.setHealth(MAX_HEALTH);
+        this.setPhysDef(0.5);
+        this.setPhysAtt(15);
+        this.setMagicDef(0.2);
     }
 
     @Override
     public void healHimself() {
-        if(health < 100){
-            health += 25;
-            if(health > 100){
-                health = 100;
-            }
+        if(getHealth() < MAX_HEALTH) {
+            setHealth(getHealth() + HEALHIMSELF);
+        }
+        else{
+            setHealth(MAX_HEALTH);
         }
     }
 
     @Override
     public void healTeammate(Hero hero) {
-        if(hero.health < 100){
-            hero.health += 10;
-            if(hero.health > 100){
-                hero.health = 100;
-            }
+        if(getHealth() < MAX_HEALTH) {
+            hero.setHealth(getHealth() + HEALHIMSELF);
+        }
+        else{
+            hero.setHealth(MAX_HEALTH);
         }
     }
 
-    @Override
-    public void physicalAttack(Hero hero) {
-        if(hero.health > 0){
-            hero.health = (int) (hero.health - (physAtt - (physAtt * hero.physDef)));
-            if(hero.health < 0){
-                hero.health = 0;
-            }
-        }
-    }
 
     public String toString(){
-        return "Paladin(health=" + health + ")";
+        return "Paladin(health=" + getHealth() + ")";
     }
 }

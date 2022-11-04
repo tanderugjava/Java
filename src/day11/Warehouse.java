@@ -1,17 +1,21 @@
 package day11;
 
 public class Warehouse {
-    int countPickedOrders;
-    int countDeliveredOrders;
-    String name;
+    private int countPickedOrders;
+    private int countDeliveredOrders;
+    private String name;
 
     public Warehouse (String name){
         this.name = name;
-        this.countPickedOrders = 0;
+        this.countPickedOrders = getCountPickedOrders();
     }
 
     public int getCountPickedOrders(){
         return countPickedOrders;
+    }
+
+    public void setCountPickedOrders(int a){
+        countPickedOrders += a;
     }
 
     public int getCountDeliveredOrders() {
@@ -21,4 +25,11 @@ public class Warehouse {
     public String toString(){
         return ("Собранных заказов " + countPickedOrders + "\n" + "Доставленных заказов " + countDeliveredOrders);
     }
+    public void countDeliveredOrdersPlus(){
+        countDeliveredOrders++;
+    }
+    public void countPickedOrdersPlus(){
+        countPickedOrders++;
+    }
+
 }

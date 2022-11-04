@@ -1,38 +1,29 @@
 package day11;
 
-public class Magician extends Hero implements PhysAttack, MagicAttack{
-    int magicAtt;
-    int physAtt;
+public class Magician extends Hero implements PhysAttack, MagicAttack {
+    private int magicAtt;
 
-    public Magician(){
-        health = 100;
-        physDef = 0;
+    public Magician() {
+        this.setHealth(100);
+        this.setPhysDef(0);
         this.magicAtt = 20;
-        magicDef = 0.8;
-        this.physAtt = 5;
+        this.setMagicDef(0.8);
+        this.setPhysAtt(5);
     }
 
     @Override
     public void magicalAttack(Hero hero) {
-        if(hero.health > 0){
-            hero.health = (int) (hero.health - (magicAtt - (magicAtt * hero.magicDef)));
-            if(hero.health < 0){
-                hero.health = 0;
+        if (hero.getHealth() > MIN_HEALTH) {
+            if (hero.getHealth() < (magicAtt - (magicAtt * hero.getMagicDef()))) {
+                hero.setHealth(MIN_HEALTH);
+            } else {
+                hero.setHealth((int) (hero.getHealth() - (magicAtt - (magicAtt * hero.getMagicDef()))));
             }
         }
     }
 
-    @Override
-    public void physicalAttack(Hero hero) {
-        if(hero.health > 0){
-            hero.health = (int) (hero.health - (physAtt - (physAtt * hero.physDef)));
-            if(hero.health < 0){
-                hero.health = 0;
-            }
-        }
-    }
 
-    public String toString(){
-        return "Magician(health=" + health + ")";
-    }
+        public String toString () {
+            return "Magician(health=" + getHealth() + ")";
+        }
 }
