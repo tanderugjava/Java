@@ -1,6 +1,6 @@
 package day11;
 
-public class Warrior extends Hero implements PhysAttack {
+public class Warrior extends Hero {
 
     public Warrior(){
         this.setHealth(MAX_HEALTH);

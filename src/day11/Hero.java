@@ -1,6 +1,6 @@
 package day11;
 
-public abstract class Hero {
+public abstract class Hero implements PhysAttack {
     private int health;
     private double physDef;
     private double magicDef;

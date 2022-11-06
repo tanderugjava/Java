@@ -1,17 +1,16 @@
 package day11;
 
-public class Courier extends Warehouse implements Worker {
+public class Courier implements Worker {
     private int salary;
     private boolean isPayed;
-
+    private Warehouse warehouse;
     private static final int MONTHLY_SALARY = 100;
     private static final int QUANTITY_DELIVERED_ORDERS_FOR_BONUS = 10000;
     private static final int BONUS = 50000;
 
-    public Courier(String name){
-        super(name);
-        this.salary = getSalary();
-        this.isPayed = getIsPayed();
+    public Courier(Warehouse warehouse){
+        this.warehouse = warehouse;
+
     }
 
     public int getSalary(){
@@ -29,15 +28,15 @@ public class Courier extends Warehouse implements Worker {
     @Override
     public void doWork() {
         salary += MONTHLY_SALARY;
-        countDeliveredOrdersPlus();
+        warehouse.incrementCountDeliveredOrders();
     }
 
     @Override
     public void bonus() {
-        if(!isPayed && getCountDeliveredOrders() == QUANTITY_DELIVERED_ORDERS_FOR_BONUS){
+        if(!isPayed && warehouse.getCountDeliveredOrders() == QUANTITY_DELIVERED_ORDERS_FOR_BONUS){
             salary += BONUS;
             isPayed = true;
-        } else if (getCountDeliveredOrders() < QUANTITY_DELIVERED_ORDERS_FOR_BONUS){
+        } else if (warehouse.getCountDeliveredOrders() < QUANTITY_DELIVERED_ORDERS_FOR_BONUS){
             System.out.println("Бонус пока не доступен");
         } else {
             System.out.println("Бонус уже был выплачен");

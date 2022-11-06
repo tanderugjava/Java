@@ -1,6 +1,6 @@
 package day11;
 
-public class Magician extends Hero implements PhysAttack, MagicAttack {
+public class Magician extends Hero implements MagicAttack {
     private int magicAtt;
 
     public Magician() {

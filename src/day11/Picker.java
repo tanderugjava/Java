@@ -1,17 +1,17 @@
 package day11;
 
-public class Picker extends Warehouse implements Worker  {
+public class Picker implements Worker  {
     private int salary;
     private boolean isPayed;
+
+    private Warehouse warehouse;
     private static final int MONTHLY_SALARY = 80;
     private static final int QUANTITY_PICKED_ORDERS_FOR_BONUS = 10000;
     private static final int BONUS = 70000;
 
 
-    public Picker(String name){
-        super(name);
-        this.salary = getSalary();
-        this.isPayed = getIsPayed();
+    public Picker(Warehouse warehouse){
+        this.warehouse = warehouse;
     }
 
     public int getSalary(){
@@ -29,15 +29,15 @@ public class Picker extends Warehouse implements Worker  {
     @Override
     public void doWork() {
         salary += MONTHLY_SALARY;
-        countPickedOrdersPlus();
+        warehouse.incrementCountPickedOrders();;
     }
 
     @Override
     public void bonus() {
-        if(!isPayed && getCountPickedOrders() == QUANTITY_PICKED_ORDERS_FOR_BONUS){
+        if(!isPayed && warehouse.getCountPickedOrders() == QUANTITY_PICKED_ORDERS_FOR_BONUS){
             salary += BONUS;
             isPayed = true;
-        } else if (getCountPickedOrders() < QUANTITY_PICKED_ORDERS_FOR_BONUS){
+        } else if (warehouse.getCountPickedOrders() < QUANTITY_PICKED_ORDERS_FOR_BONUS){
             System.out.println("Бонус пока не доступен");
         } else {
             System.out.println("Бонус уже был выплачен");

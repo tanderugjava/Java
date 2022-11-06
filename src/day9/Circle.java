@@ -2,7 +2,7 @@ package day9;
 
 public class Circle extends Figure{
 
-    int radius;
+    private int radius;
 
     public Circle(int radius, String color){
         super(color);

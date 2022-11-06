@@ -3,11 +3,10 @@ package day11;
 public class Warehouse {
     private int countPickedOrders;
     private int countDeliveredOrders;
-    private String name;
 
-    public Warehouse (String name){
-        this.name = name;
-        this.countPickedOrders = getCountPickedOrders();
+    public Warehouse (){
+      this.countPickedOrders = countPickedOrders;
+      this.countDeliveredOrders = countDeliveredOrders;
     }
 
     public int getCountPickedOrders(){
@@ -25,10 +24,10 @@ public class Warehouse {
     public String toString(){
         return ("Собранных заказов " + countPickedOrders + "\n" + "Доставленных заказов " + countDeliveredOrders);
     }
-    public void countDeliveredOrdersPlus(){
+    public void incrementCountDeliveredOrders(){
         countDeliveredOrders++;
     }
-    public void countPickedOrdersPlus(){
+    public void incrementCountPickedOrders(){
         countPickedOrders++;
     }
 

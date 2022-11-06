@@ -1,7 +1,7 @@
 package day9;
 
 public class Teacher extends Human{
-    String subjectName;
+    private String subjectName;
 
     public Teacher(String name, String subjectName){
         super(name);
@@ -14,6 +14,6 @@ public class Teacher extends Human{
 
     public void printInfo(){
         super.printInfo();
-        System.out.println("Этот преподаватель с именем " + this.name);
+        System.out.println("Этот преподаватель с именем " + getName());
     }
 }

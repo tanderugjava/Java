@@ -1,7 +1,7 @@
 package day9;
 
 public class Rectangle extends Figure {
-    int width;
+    private int width;
     int height;
 
     public Rectangle(int width, int height, String color){

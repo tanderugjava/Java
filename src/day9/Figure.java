@@ -1,7 +1,7 @@
 package day9;
 
 public abstract class Figure {
-    String color;
+    private String color;
 
     public Figure(String color){
         this.color = color;

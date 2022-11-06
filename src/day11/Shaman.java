@@ -1,6 +1,6 @@
 package day11;
 
-public class Shaman extends Hero implements  Healer, PhysAttack, MagicAttack{
+public class Shaman extends Hero implements  Healer, MagicAttack{
 
     public static final int HEALHIMSELF = 50;
     private int magicAtt;
