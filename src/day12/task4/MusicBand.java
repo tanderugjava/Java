@@ -1,12 +1,11 @@
 package day12.task4;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MusicBand {
     private String name;
     private int year;
-    private List<String> member = new ArrayList<>();
+    private List<String> member;
 
     public MusicBand(String name, int year, List<String> member){
         this.name = name;
@@ -29,14 +28,16 @@ public class MusicBand {
         }
     }
 
-    public void printMembers(MusicBand band){
-        band.member.toString();
+    public void printMembers(){
+        for (String x: member) {
+            System.out.print("'" + x + "'" + " ");
+        }
     }
 
-    public String getMembers(MusicBand band){
+    public String getMembers(){
         String memb = "";
-        for (int i = 0; i < band.member.size(); i++) {
-            memb = memb + band.member.get(i) + " ";
+        for (int i = 0; i < this.member.size(); i++) {
+            memb = memb + this.member.get(i) + " ";
             }
         return memb;
         }

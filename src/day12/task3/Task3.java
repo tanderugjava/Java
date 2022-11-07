@@ -1,8 +1,6 @@
 package day12.task3;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Task3 {
     public static void main(String[] args) {
@@ -22,6 +20,10 @@ public class Task3 {
         groupsAfter2000(list);
 
         System.out.println(list);
+
+        Collections.shuffle(list);
+        System.out.println(list);
+
         System.out.println(groupsAfter2000(list));
 
 
