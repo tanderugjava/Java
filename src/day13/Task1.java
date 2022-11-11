@@ -18,7 +18,17 @@ public class Task1 {
             user1.sendMessage(user3, "Как отдохнул?");
             user3.sendMessage(user1, "Прекрасно, спасибо!");
             MessageDataBase.showDialog(user1, user3);
-        System.out.println(MessageDataBase.getMessages());
+
+            System.out.println(user1.isSubscribed(user2));
+            user1.subscribe(user2);
+            System.out.println(user1.isSubscribed(user2));
+            System.out.println(user1.isFriend(user2));
+            user2.subscribe(user1);
+            System.out.println(user1.isFriend(user2));
+
+
+
+            /*System.out.println(MessageDataBase.getMessages());*/
         }
     }
 

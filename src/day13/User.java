@@ -25,26 +25,11 @@ public class User {
     }
 
     public boolean isSubscribed(User user) {
-        boolean status = false;
-        Iterator var3 = this.subscriptions.iterator();
-
-        while(var3.hasNext()) {
-            User name = (User)var3.next();
-            if (name == user) {
-                status = true;
-            }
-        }
-
-        return status;
+        return subscriptions.contains(user);
     }
 
     public boolean isFriend(User user) {
-        boolean friend = false;
-        if (this.isSubscribed(user) && user.isSubscribed(this)) {
-            friend = true;
-        }
-
-        return friend;
+        return subscriptions.contains(user)&& user.getSubscriptions().contains(this);
     }
 
     public void sendMessage(User user, String text) {
