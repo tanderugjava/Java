@@ -22,10 +22,8 @@ public class MusicBand {
     }
 
     public static void transferMembers(MusicBand band, MusicBand band1){
-        for (int i = 0; i < band1.member.size(); i++) {
-            band.member.add(band1.member.get(i));
-            band1.member.remove(i);
-        }
+        band.member.addAll(band1.member);
+        band1.member.clear();
     }
 
     public void printMembers(){
@@ -34,11 +32,7 @@ public class MusicBand {
         }
     }
 
-    public String getMembers(){
-        String memb = "";
-        for (int i = 0; i < this.member.size(); i++) {
-            memb = memb + this.member.get(i) + " ";
-            }
-        return memb;
+    public List<String> getMembers(){
+        return member;
         }
     }

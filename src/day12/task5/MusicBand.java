@@ -7,7 +7,6 @@ public class MusicBand {
     private String name;
     private int year;
     private List<MusicArtist> members ;
-    private MusicArtist musicArtist;
 
     public MusicBand(String name, int year, List<MusicArtist> members){
         this.name = name;
@@ -24,9 +23,7 @@ public class MusicBand {
     }
 
     public static void transferMembers(MusicBand band, MusicBand band1){
-        for (int i = 0; i < band1.members.size(); i++) {
-            band.members.add(band1.members.get(i));
-        }
+        band.members.addAll(band1.members);
         band1.members.clear();
     }
 

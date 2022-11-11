@@ -16,7 +16,11 @@ public class Task4 {
 
         MusicBand.transferMembers(band, band1);
 
+
+        System.out.print("Band ");
         band.printMembers();
+
+        System.out.print("\nBand1 ");
         band1.printMembers();
 
         System.out.println();
