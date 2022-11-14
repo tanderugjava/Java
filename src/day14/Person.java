@@ -17,29 +17,22 @@ public class Person {
 
     @Override
     public String toString() {
-        return  "name='" + name + '\'' +
-                ", year=" + year + '}';
+        return  name + " " + year;
     }
 
     public static List<Person> parseFileToObjList(File file){
         List<Person> personList = new ArrayList<>();
         try {
             Scanner scanner = new Scanner(file);
-            List<String> list = new ArrayList<>();
             while (scanner.hasNextLine()) {
-                list.add(scanner.nextLine());
-            }
-            scanner.close();
-
-            for (String s : list) {
-                String[] text = s.split(" ");
-                if (Integer.parseInt(text[1]) <= 0) {
+                String[] line = scanner.nextLine().split(" ");
+                if (Integer.parseInt(line[1]) <= 0)
                     throw new IllegalArgumentException();
-                } else {
-                    Person person = new Person(text[0], Integer.parseInt(text[1]));
-                    personList.add(person);
+
+                Person person = new Person(line[0], Integer.parseInt(line[1]));
+                personList.add(person);
                 }
-            }
+            scanner.close();
         } catch(FileNotFoundException e){
             System.out.println("Файл не найден");
         } catch(IllegalArgumentException e){
