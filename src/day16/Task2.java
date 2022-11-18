@@ -27,29 +27,26 @@ public class Task2 {
                 for (int i = 0; i < count; i++) {
                     sum += Integer.parseInt(scanner.nextLine());
                 }
-                System.out.println(sum);
                 pw2.println(sum / count);
             }
         }
+        printResult(file1);
     }
+
 
     public static void printResult(File file) throws FileNotFoundException {
         try (Scanner scanner = new Scanner(file)){
+            double sum = 0;
             while (scanner.hasNextLine()) {
-                double sum;
-                for (String x: scanner.nextLine()) {
-
+                int count = 50;
+                for (int i = 0; i < count; i++) {
+                    sum += Double.parseDouble(scanner.nextLine());
+                    System.out.println(sum);
                 }
-
-
                 }
+            System.out.println((int)sum);
             }
-
-        }
-
-
-
-
+    }
 }
-}
+
 

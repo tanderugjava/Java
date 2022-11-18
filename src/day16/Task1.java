@@ -21,7 +21,6 @@ public class Task1 {
                 count++;
             }
             System.out.println(sum/count);
-
             System.out.printf("%.3f", sum/count);
 
         } catch (FileNotFoundException e) {
