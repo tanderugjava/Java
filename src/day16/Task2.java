@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Task2 {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args)  {
         File file = new File("file1");
         File file1 = new File("file2");
         Random random = new Random();
@@ -18,6 +18,10 @@ public class Task2 {
                 pw1.println(random.nextInt(100));
             }
         }
+         catch (FileNotFoundException e) {
+        System.out.println("Запись в файл не удалась");
+        }
+
 
         try (Scanner scanner = new Scanner(file);
             PrintWriter pw2 = new PrintWriter(file1)){
@@ -29,22 +33,27 @@ public class Task2 {
                 }
                 pw2.println(sum / count);
             }
+        }catch (FileNotFoundException e) {
+            System.out.println("Файл не найден");
         }
         printResult(file1);
     }
 
 
-    public static void printResult(File file) throws FileNotFoundException {
+    public static void printResult(File file)  {
         try (Scanner scanner = new Scanner(file)){
             double sum = 0;
             while (scanner.hasNextLine()) {
                 int count = 50;
                 for (int i = 0; i < count; i++) {
                     sum += Double.parseDouble(scanner.nextLine());
-                    System.out.println(sum);
                 }
-                }
+            }
             System.out.println((int)sum);
+
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("Файл не найден");
             }
     }
 }
