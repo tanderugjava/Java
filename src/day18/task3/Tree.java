@@ -41,8 +41,15 @@ public class Tree {
         }
     }
 
-   /* private void dfs(Node root){
-        Stack
-
-    }*/
+    public void dfs(Node root){
+        if(root.getLeftChild() != null){
+            System.out.print(root.getLeftChild().getValue() + " ");
+            dfs(root.getLeftChild());
+        }
+        if (root.getRightChild() != null){
+            System.out.print(root.getRightChild().getValue() + " ");
+            dfs(root.getRightChild());
+        }
+    }
 }
+

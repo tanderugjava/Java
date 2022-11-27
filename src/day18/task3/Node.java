@@ -5,10 +5,6 @@ public class Node {
     private Node leftChild;
     private Node rightChild;
 
-    public void printNode(){
-        System.out.println("Выбранный узел имеет значение " + value);
-    }
-
     public int getValue() {
         return value;
     }
@@ -32,6 +28,4 @@ public class Node {
     public  void setLeftChild(Node leftChild){
         this.leftChild = leftChild;
     }
-
-
-}
+ }

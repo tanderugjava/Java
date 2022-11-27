@@ -13,13 +13,12 @@ public class Task3 {
         tree.insertNode(15, root);
         tree.insertNode(16, root);
         tree.insertNode(18, root);
-        tree.insertNode(20, root);
         tree.insertNode(22, root);
         tree.insertNode(23, root);
         tree.insertNode(24, root);
         tree.insertNode(27, root);
         tree.insertNode(150, root);
 
-
+        tree.dfs(root);  // не могу сообразить как вывести значение корня дерева
     }
 }
