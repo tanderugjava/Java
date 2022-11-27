@@ -46,6 +46,9 @@ public class Tree {
             System.out.print(root.getLeftChild().getValue() + " ");
             dfs(root.getLeftChild());
         }
+        if(root.getValue() == 20){
+            System.out.print(root.getValue() + " ");
+        }
         if (root.getRightChild() != null){
             System.out.print(root.getRightChild().getValue() + " ");
             dfs(root.getRightChild());

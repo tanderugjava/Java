@@ -19,6 +19,6 @@ public class Task3 {
         tree.insertNode(27, root);
         tree.insertNode(150, root);
 
-        tree.dfs(root);  // не могу сообразить как вывести значение корня дерева
+        tree.dfs(root);
     }
 }
